@@ -1,5 +1,5 @@
-Simple Users panel
-==================
+Simple user panel
+=================
 
 > простое web-приложение, реализующее локигу администрирования пользователей
 
@@ -131,24 +131,24 @@ UI написан с использованием фрэймворка **[Materi
 
 #### Добавление пользователей
 ---
-![alt-text]
+![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/1_motion.gif)
 
 #### Редактирование пользователей
 ---
-![alt-text]
+![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/2_motion.gif)
 
 #### Попытка входа АКТИВИРОВАННЫМ пользователем
 ---
-![alt-text]
+![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/3_motion.gif)
 
 #### Попытка входа НЕ АКТИВИРОВАННЫМ пользователем
 ---
-![alt-text]
+![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/4_motion.gif)
 
 #### Переходы на страницы /sample и /signed-sample аутентифицированным пользователем
 ---
-![alt-text]
+![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/5_motion.gif)
 
 #### Переходы на страницы /sample и /signed-sample не аутентифицированным пользователем
 ---
-![alt-text]
+![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/6_motion.gif)
