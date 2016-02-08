@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       sessions: 'users/sessions'
     }
 
-  resources :users do
+  resources :users, except: [:show] do
     get 'change-password', on: :member
   end
 end
