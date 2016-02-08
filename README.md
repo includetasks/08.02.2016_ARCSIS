@@ -29,6 +29,7 @@ Simple user panel
 
 ```bash
 git clone git://github.com/includetasks/08.02.2016_ARCSIS.git
+```
 
 - Установите/обновите необходимые гемы:
 
