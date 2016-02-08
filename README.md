@@ -28,7 +28,7 @@ Simple user panel
 - Склонируйте репозиторий:
 
 ```bash
-git clone git://github.com/includetasks/08.02.2016_ARKIS.git
+git clone git://github.com/includetasks/08.02.2016_ARCSIS.git
 
 - Установите/обновите необходимые гемы:
 
@@ -67,7 +67,7 @@ rails server
 #### Route List
 ---
 
-**Source file**: [route list](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/config/routes.rb)
+**Source file**: [route list](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/config/routes.rb)
 
 ```bash
               Prefix Verb   URI Pattern                          Controller#Action
@@ -112,12 +112,12 @@ change_password_user GET    /users/:id/change-password(.:format) users#change_pa
 └── ./app/controllers/users_controller.rb
 ```
 
-- **[ApplicationController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/application_controller.rb)** - баззовый контроллер приложения (без изменений);
-- **[ErrorsController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/errors_controller.rb)** - минимальная реализация контроллера обработки ошибок (404/500);
-- **[FrontpagesController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/frontpages_controller.rb)** - контроллер, обрабатывающий запросы к страницам Sample и Signed Sample;
-- **[Users/SessionsController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/users/sessions_controller.rb)** - контроллер, наследуемый от Devise/Session-контроллера. Реализован для
+- **[ApplicationController](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/app/controllers/application_controller.rb)** - баззовый контроллер приложения (без изменений);
+- **[ErrorsController](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/app/controllers/errors_controller.rb)** - минимальная реализация контроллера обработки ошибок (404/500);
+- **[FrontpagesController](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/app/controllers/frontpages_controller.rb)** - контроллер, обрабатывающий запросы к страницам Sample и Signed Sample;
+- **[Users/SessionsController](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/app/controllers/users/sessions_controller.rb)** - контроллер, наследуемый от Devise/Session-контроллера. Реализован для
 возможности перехвата момента, когда **неактивированный** пользователй пытается аутентифицироваться.
-- **[UsersController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/users_controller.rb)** - контроллер, реализующий работу с юзерами (CRUD).
+- **[UsersController](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/app/controllers/users_controller.rb)** - контроллер, реализующий работу с юзерами (CRUD).
 
 
 #### UI
@@ -130,10 +130,10 @@ UI написан с использованием фрэймворка **[Materi
 
 Были написаны несколько поверхностных feature-тестов (для ключевых моментов) и минимальный набор Unit-тестов (для модели User).
 
-- **feature**: [User tries to create a user](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/features/create_user_spec.rb)
-- **feature**: [User tries to sign in](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/features/user_tries_to_sign_in_spec.rb)
-- **feature**: [User tries to visit sample pages](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/features/user_tries_to_visit_pages_spec.rb)
-- **model**: [User Model](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/models/user_spec.rb)
+- **feature**: [User tries to create a user](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/spec/features/create_user_spec.rb)
+- **feature**: [User tries to sign in](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/spec/features/user_tries_to_sign_in_spec.rb)
+- **feature**: [User tries to visit sample pages](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/spec/features/user_tries_to_visit_pages_spec.rb)
+- **model**: [User Model](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/spec/models/user_spec.rb)
 
 #### Документирование
 ---
@@ -148,24 +148,24 @@ UI написан с использованием фрэймворка **[Materi
 
 #### Добавление пользователей
 ---
-![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/1_motion.gif)
+![alt-text](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/motions/1_motion.gif)
 
 #### Редактирование пользователей
 ---
-![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/2_motion.gif)
+![alt-text](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/motions/2_motion.gif)
 
 #### Попытка входа АКТИВИРОВАННЫМ пользователем
 ---
-![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/3_motion.gif)
+![alt-text](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/motions/3_motion.gif)
 
 #### Попытка входа НЕ АКТИВИРОВАННЫМ пользователем
 ---
-![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/4_motion.gif)
+![alt-text](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/motions/4_motion.gif)
 
 #### Переходы на страницы /sample и /signed-sample аутентифицированным пользователем
 ---
-![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/5_motion.gif)
+![alt-text](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/motions/5_motion.gif)
 
 #### Переходы на страницы /sample и /signed-sample не аутентифицированным пользователем
 ---
-![alt-text](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/motions/6_motion.gif)
+![alt-text](https://github.com/includetasks/08.02.2016_ARCSIS/blob/master/motions/6_motion.gif)
