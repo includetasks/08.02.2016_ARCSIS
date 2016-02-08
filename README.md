@@ -19,7 +19,7 @@ bundle install
 bundle update
 ```
 
-- Сконфигурируйте базу данных *config/database.yml* (PostgreSQL):
+- Сконфигурируйте базу данных **config/database.yml** (PostgreSQL):
 
 ```ruby
 rake db:migrate db:test:prepare
@@ -40,10 +40,11 @@ rails server
 Нюансы реализации
 -----------------
 
-* Для работы с пользователями (регистрация и аутентификация) часто используется гем Devise,
-поэтому я решил огранизовать приложение вокруг этой библиотеки.
+Для работы с пользователями (регистрация и аутентификация) часто используется гем **Devise**,
+поэтому я решил огранизовать приложение вокруг этой библиотеки. В рамках задачи, в настройках Devise
+были отключены опции, требующие подтверждения регистрации пользователя.
 
-##### Route list:
+##### Route List
 
 ```bash
               Prefix Verb   URI Pattern                          Controller#Action
@@ -60,8 +61,55 @@ change_password_user GET    /users/:id/change-password(.:format) users#change_pa
                      POST   /users(.:format)                     users#create
             new_user GET    /users/new(.:format)                 users#new
            edit_user GET    /users/:id/edit(.:format)            users#edit
-                user GET    /users/:id(.:format)                 users#show
-                     PATCH  /users/:id(.:format)                 users#update
+                user PATCH  /users/:id(.:format)                 users#update
                      PUT    /users/:id(.:format)                 users#update
                      DELETE /users/:id(.:format)                 users#destroy
 ```
+
+- **/sample** - страница, **доступная любому пользователю**;
+- **/signed-sample** - страница, доступная только **аутентифицированному** пользователю;
+- **/sign-in** - страница входа на сайт;
+- **/users** - страница со списком пользователей;;
+- **/users/new** - страница с формой создания нового пользователя;
+- **/users/:id/change-password** - страница смены пароля пользователя;
+- **/users/:id/edit** - страница редактирования данных пользователя.
+
+##### Controller List
+
+```bash
+./app/controllers
+├── ./app/controllers/application_controller.rb
+├── ./app/controllers/concerns
+├── ./app/controllers/errors_controller.rb
+├── ./app/controllers/frontpages_controller.rb
+├── ./app/controllers/users
+│   └── ./app/controllers/users/sessions_controller.rb
+└── ./app/controllers/users_controller.rb
+```
+
+- **ApplicationController** - баззовый контроллер приложения (без изменений);
+- **ErrorsController** - минимальная реализация контроллера обработки ошибок (404/500);
+- **FrontpagesController** - контроллер, обрабатывающий запросы к страницам Sample и Signed Sample;
+- **Users/SessionsController** - контроллер, наследуемый от Devise/Session-контроллера. Реализован для
+возможности перехвата момента, когда **неактивированный** пользователй пытается аутентифицироваться.
+- **UsersController** - контроллер, реализующий работу с юзерами (CRUD).
+
+
+##### UI
+
+UI написан с использованием фрэймворка **Material Design Lite** совместно с **Material Icons**.
+
+##### Тесты (RSpec)
+
+Были написаны только несколько feature-тестов (для ключевых моментов) и минимальный набор Unit-тестов (для модели User).
+
+- **feature**: User tries to create a user
+- **feature**: User tries to sign in
+- **feature**: User tries to visit sample pages
+- **model**: User Model
+
+##### Документирование
+
+Ввиду отсутствия необходимости полного комментирвоания проекта, закомментировал
+некоторые ключевые моменты модели User, аннотации к экшнам контроллеров (METHOD + URI) и
+автоматически сгенерировал database-аннотации к контроллерам и моделям с помощью гема Annotate.
