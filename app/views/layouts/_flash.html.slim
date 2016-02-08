@@ -1,0 +1,11 @@
+.page-content
+  .mdl-grid
+    .mdl-cell.mdl-cell--12-col.mdl-typography--text-center.mdl-shadow--2dp.flash-cell
+      - if flash[:notice]
+        .mdl-color--green-50
+          i.material-icons done_all
+          = flash[:notice]
+      - if flash[:alert]
+        .mdl-color--red-50
+          i.material-icons report_problem
+          = flash[:alert]

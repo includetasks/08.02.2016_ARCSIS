@@ -1,0 +1,17 @@
+@import 'material';
+@import 'material_icons';
+
+@import 'flash';
+@import 'navbar';
+@import 'userform';
+@import 'userlist';
+
+.page-content {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.kitty-image {
+  margin: 0 auto;
+  display: block;
+}

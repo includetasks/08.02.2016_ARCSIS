@@ -1,0 +1,23 @@
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  adapter: postgresql
+  pool: 5
+  database: rails_minimal
+  host: localhost
+  username: daiver
+  password: atata123___
+
+test:
+  adapter: postgresql
+  pool: 5
+  database: rails_minimal
+  host: localhost
+  username: daiver
+  password: atata123___
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>

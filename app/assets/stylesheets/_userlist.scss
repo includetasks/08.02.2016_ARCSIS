@@ -1,0 +1,20 @@
+.user-list {
+  .user-list__table {
+    margin: 0 auto;
+
+    th, td {
+      text-align: center !important;
+      i { vertical-align: middle; }
+    }
+  }
+
+  .user-list__pagination {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    font-size: 16px;
+  }
+
+  .user-list__action-link {
+    padding: 2px;
+  }
+}
