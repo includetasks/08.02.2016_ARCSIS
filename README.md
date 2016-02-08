@@ -19,7 +19,9 @@ bundle install
 bundle update
 ```
 
-- Сконфигурируйте базу данных **config/database.yml** (PostgreSQL):
+- Сконфигурируйте базу данных **config/database.yml** (PostgreSQL);
+
+- Выполните необходимые миграции базы данных:
 
 ```ruby
 rake db:migrate db:test:prepare
@@ -44,7 +46,10 @@ rails server
 поэтому я решил огранизовать приложение вокруг этой библиотеки. В рамках задачи, в настройках Devise
 были отключены опции, требующие подтверждения регистрации пользователя.
 
-##### Route List
+#### Route List
+---
+
+**Source file**: [route list](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/config/routes.rb)
 
 ```bash
               Prefix Verb   URI Pattern                          Controller#Action
@@ -74,7 +79,8 @@ change_password_user GET    /users/:id/change-password(.:format) users#change_pa
 - **/users/:id/change-password** - страница смены пароля пользователя;
 - **/users/:id/edit** - страница редактирования данных пользователя.
 
-##### Controller List
+#### Controller List
+---
 
 ```bash
 ./app/controllers
@@ -87,28 +93,31 @@ change_password_user GET    /users/:id/change-password(.:format) users#change_pa
 └── ./app/controllers/users_controller.rb
 ```
 
-- **ApplicationController** - баззовый контроллер приложения (без изменений);
-- **ErrorsController** - минимальная реализация контроллера обработки ошибок (404/500);
-- **FrontpagesController** - контроллер, обрабатывающий запросы к страницам Sample и Signed Sample;
-- **Users/SessionsController** - контроллер, наследуемый от Devise/Session-контроллера. Реализован для
+- **[ApplicationController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/application_controller.rb)** - баззовый контроллер приложения (без изменений);
+- **[ErrorsController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/errors_controller.rb)** - минимальная реализация контроллера обработки ошибок (404/500);
+- **[FrontpagesController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/frontpages_controller.rb)** - контроллер, обрабатывающий запросы к страницам Sample и Signed Sample;
+- **[Users/SessionsController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/users/sessions_controller.rb)** - контроллер, наследуемый от Devise/Session-контроллера. Реализован для
 возможности перехвата момента, когда **неактивированный** пользователй пытается аутентифицироваться.
-- **UsersController** - контроллер, реализующий работу с юзерами (CRUD).
+- **[UsersController](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/app/controllers/users_controller.rb)** - контроллер, реализующий работу с юзерами (CRUD).
 
 
-##### UI
+#### UI
+---
 
 UI написан с использованием фрэймворка **Material Design Lite** совместно с **Material Icons**.
 
-##### Тесты (RSpec)
+#### Тесты (RSpec)
+---
 
-Были написаны только несколько feature-тестов (для ключевых моментов) и минимальный набор Unit-тестов (для модели User).
+Были написаны несколько поверхностных feature-тестов (для ключевых моментов) и минимальный набор Unit-тестов (для модели User).
 
-- **feature**: User tries to create a user
-- **feature**: User tries to sign in
-- **feature**: User tries to visit sample pages
-- **model**: User Model
+- **feature**: [User tries to create a user](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/features/create_user_spec.rb)
+- **feature**: [User tries to sign in](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/features/user_tries_to_sign_in_spec.rb)
+- **feature**: [User tries to visit sample pages](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/features/user_tries_to_visit_pages_spec.rb)
+- **model**: [User Model](https://github.com/includetasks/08.02.2016_ARKIS/blob/master/spec/models/user_spec.rb)
 
-##### Документирование
+#### Документирование
+---
 
 Ввиду отсутствия необходимости полного комментирвоания проекта, закомментировал
 некоторые ключевые моменты модели User, аннотации к экшнам контроллеров (METHOD + URI) и
