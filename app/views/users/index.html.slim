@@ -30,12 +30,9 @@
                 td
                   = link_to change_password_user_path(user), class: 'user-list__action-link' do
                     i.material-icons{ id="cp-#{user.id}" } graphic_eq
-                    .mdl-tooltip{ for="cp-#{user.id}" } Change password
 
                   = link_to edit_user_path(user), class: 'user-list__action-link' do
                     i.material-icons{ id="ed-#{user.id}" } settings
-                    .mdl-tooltip{ for="ed-#{user.id}" } Edit
 
                   = link_to user_path(user), method: :delete, class: 'user-list__action-link' do
                     i.material-icons{ id="dl-#{user.id}" } highlight_off
-                    .mdl-tooltip{ for="dl-#{user.id}" } Delete
